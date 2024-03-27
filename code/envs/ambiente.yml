@@ -1,0 +1,14 @@
+name: t_noaa
+
+channels:
+  - conda-forge
+  - base
+  - R
+  - bioconda
+
+dependencies:
+  - r-base
+  - r-tidyverse
+  - parallel
+  - snakemake
+  - graphviz

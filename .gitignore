@@ -1,3 +1,5 @@
+data/*
+
 # History files
 .Rhistory
 .Rapp.history
@@ -47,3 +49,34 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+*~
+*.pyc
+*.swp
+
+docs/_build
+apidocs/_build
+apidocs/**/_autosummary
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+.snakemake*
+.venv
+.venv/*
+.python-version
+
+
+.idea
+
+.pytest*
+.cache
+.mypy_cache
+.ipynb*
+.vscode
+.ropeproject
+.test*
+tests/test*/*
+playground/*
+tutorial/*

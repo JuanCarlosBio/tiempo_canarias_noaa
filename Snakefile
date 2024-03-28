@@ -4,8 +4,9 @@ rule targets:
         "data/ghcnd_all_files.txt",
         "data/ghcnd-inventory.txt",
         "data/ghcnd-stations.txt",
+        "data/islands_shp/islas.shp",
         "data/ghcnd_tidy.tsv",
-        "data/ghcnd_canary_regions.tsv"
+        "data/ghcnd_canary_regions_years.tsv"
 
 rule get_all_archives:
     input:
@@ -53,6 +54,16 @@ rule get_stations:
         """
         {input.script} {params}
         """
+rule get_shp_canary_islands:
+    input:
+        bash_script = "code/canary_islands_idecanarias.bash",
+    output:
+        "data/islands_shp/islas.shp"
+    shell:
+        """
+        {input.bash_script}
+        """
+ 
 rule summirise_dly_files:
     input:
         bash_script = "code/concatenate_dly.bash",
@@ -65,12 +76,12 @@ rule summirise_dly_files:
         {input.bash_script}
         """
  
-rule aggregate_stations:
+rule get_canary_regions_years:
     input:
         r_script = "code/merge_lat_lon.R",
-        data = "data/ghcnd-stations.txt"
+        data = "data/ghcnd-inventory.txt"
     output:
-        "data/ghcnd_canary_regions.tsv"
+        "data/ghcnd_canary_regions_years.tsv"
     shell:
         """
         {input.r_script}

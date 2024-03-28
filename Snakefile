@@ -7,7 +7,8 @@ rule targets:
         "data/islands_shp/municipios.shp",
         "data/ghcnd_tidy.tsv",
         "data/ghcnd_canary_regions_years.tsv",
-        "figures/precipitaciones_canarias.png"
+        "figures/precipitaciones_canarias.png",
+        "index.html"
 
 rule get_all_archives:
     input:
@@ -100,4 +101,15 @@ rule plot_drought_canary_region:
         """
         {input.r_script}
         """
-    
+
+rule index_html:
+    input:
+        rmd = "index.Rmd",
+        png = "figures/precipitaciones_canarias.png"
+    output:
+        "index.html"
+    shell:
+        """
+        R -e "library(rmarkdown); render('{input.rmd}')"
+        """
+     

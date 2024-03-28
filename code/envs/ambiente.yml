@@ -12,6 +12,7 @@ dependencies:
   - r-glue
   - r-archive
   - r-sf
+  - r-markdown
   - parallel
   - snakemake
   - graphviz

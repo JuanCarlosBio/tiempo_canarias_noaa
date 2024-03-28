@@ -16,8 +16,8 @@ lat_lon_prcp <- inner_join(prcp_data, stations_data, by = "id") %>%
     group_by(latitude, longitude, year) %>%
     summarise(mean_prcp = mean(prcp)) 
 
-end <- format(today(), "%d de %B, %Y")
-start <- format(today() - 30, "%d de %B, %Y")
+end <- format(today(), "%d/%m/%Y")
+start <- format(today() - 30, "%d/%m/%Y")
 
 lat_lon_prcp %>%
     group_by(longitude, latitude) %>%
@@ -57,7 +57,7 @@ ggplot() +
     theme(
         plot.background = element_rect(fill = "#ffffff", color = "#ffffff"),
         panel.background = element_rect(fill = "#ccfffd", color = "#ccfffd"),
-        plot.title = element_text(size = 13, face = "bold"),
+        plot.title = element_text(size = 12, face = "bold"),
         plot.caption = element_text(hjust=0),
         panel.grid = element_blank(),
         axis.text = element_text(color = "black", size = 6),

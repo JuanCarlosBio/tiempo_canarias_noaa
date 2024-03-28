@@ -4,9 +4,10 @@ rule targets:
         "data/ghcnd_all_files.txt",
         "data/ghcnd-inventory.txt",
         "data/ghcnd-stations.txt",
-        "data/islands_shp/islas.shp",
+        "data/islands_shp/municipios.shp",
         "data/ghcnd_tidy.tsv",
-        "data/ghcnd_canary_regions_years.tsv"
+        "data/ghcnd_canary_regions_years.tsv",
+        "figures/precipitaciones_canarias.png"
 
 rule get_all_archives:
     input:
@@ -58,7 +59,7 @@ rule get_shp_canary_islands:
     input:
         bash_script = "code/canary_islands_idecanarias.bash",
     output:
-        "data/islands_shp/islas.shp"
+        "data/islands_shp/municipios.shp",
     shell:
         """
         {input.bash_script}
@@ -86,4 +87,17 @@ rule get_canary_regions_years:
         """
         {input.r_script}
         """
- 
+
+rule plot_drought_canary_region:
+    input:
+        r_script = "code/plot_drought_canary_regions.R",
+        prcp_data = "data/ghcnd_tidy.tsv",
+        station_data = "data/ghcnd_canary_regions_years.tsv",
+        muni = "data/islands_shp/municipios.shp"
+    output:
+        "figures/precipitaciones_canarias.png"
+    shell:
+        """
+        {input.r_script}
+        """
+    

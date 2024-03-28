@@ -11,6 +11,7 @@ dependencies:
   - r-tidyverse
   - r-glue
   - r-archive
+  - r-sf
   - parallel
   - snakemake
   - graphviz

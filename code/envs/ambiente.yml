@@ -9,6 +9,9 @@ channels:
 dependencies:
   - r-base
   - r-tidyverse
+  - r-glue
+  - r-archive
   - parallel
   - snakemake
   - graphviz
+  - coreutils

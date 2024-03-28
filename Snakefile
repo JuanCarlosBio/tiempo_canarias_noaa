@@ -4,7 +4,8 @@ rule targets:
         "data/ghcnd_all_files.txt",
         "data/ghcnd-inventory.txt",
         "data/ghcnd-stations.txt",
-        "data/ghcnd_tidy.tsv"
+        "data/ghcnd_tidy.tsv",
+        "data/ghcnd_canary_regions.tsv"
 
 rule get_all_archives:
     input:
@@ -63,4 +64,15 @@ rule summirise_dly_files:
         """
         {input.bash_script}
         """
-  
+ 
+rule aggregate_stations:
+    input:
+        r_script = "code/merge_lat_lon.R",
+        data = "data/ghcnd-stations.txt"
+    output:
+        "data/ghcnd_canary_regions.tsv"
+    shell:
+        """
+        {input.r_script}
+        """
+ 

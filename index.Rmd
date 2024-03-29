@@ -22,7 +22,7 @@ body{
     font-size: 1.2vw;
 }
 ```
-![](figures\precipitaciones_canarias.png)
+![](figures/precipitaciones_canarias.png)
 
 Última actualización el `r format(today(), "%d/%m/%Y")`    
 Sitio [desarrollado](`r rmarkdown::metadata$github_repo`) por [Juan Carlos García Estupiñán](mailto:`r rmarkdown::metadata$email_adress`)

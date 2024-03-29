@@ -31,7 +31,7 @@ jobs:
           git config --local user.name "GitHub"
       - name: Commit changes to repository
         run: |
-          git add figures/world_drought.png index.html
+          git add figures/precipitaciones_canarias.png index.html
           git commit -m "New day's rendering"
           git push origin main
       - run: echo "🍏 This job's status is ${{ job.status }}."

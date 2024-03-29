@@ -35,6 +35,5 @@ jobs:
           git add figures/precipitaciones_canarias.png
           git commit -m "Actualización del renderizado diario"
           git push origin main
-      - run: echo "🍏 El estatus de esta acción es ${{ job.status }}."  
         
       

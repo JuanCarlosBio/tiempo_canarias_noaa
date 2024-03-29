@@ -62,7 +62,7 @@ rule get_stations:
         "code/envs/ambiente.yml"
     shell:
         """
-        {input.script} {params}
+        bash {input.script} {params}
         """
 rule get_shp_canary_islands:
     input:

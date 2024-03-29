@@ -21,7 +21,7 @@ rule get_all_archives:
         "code/envs/ambiente.yml"
     shell:
         """
-        {input.script} {params}
+        bash {input.script} {params}
         """
 
 rule get_all_file_names:
@@ -34,7 +34,7 @@ rule get_all_file_names:
         "code/envs/ambiente.yml"
     shell:
         """
-        {input.script}
+        bash {input.script}
         """
 
 rule get_inventory:
@@ -48,7 +48,7 @@ rule get_inventory:
         "code/envs/ambiente.yml"
     shell:
         """
-        {input.script} {params}
+        bash {input.script} {params}
         """
     
 rule get_stations:
@@ -73,7 +73,7 @@ rule get_shp_canary_islands:
         "code/envs/ambiente.yml"
     shell:
         """
-        {input.bash_script}
+        bash {input.bash_script}
         """
  
 rule summirise_dly_files:
@@ -87,7 +87,7 @@ rule summirise_dly_files:
         "code/envs/ambiente.yml"
     shell:
         """
-        {input.bash_script}
+        bash {input.bash_script}
         """
  
 rule get_canary_regions_years:
@@ -100,7 +100,7 @@ rule get_canary_regions_years:
         "code/envs/ambiente.yml"
     shell:
         """
-        {input.r_script}
+        Rscript {input.r_script}
         """
 
 rule plot_drought_canary_region:
@@ -115,7 +115,7 @@ rule plot_drought_canary_region:
         "code/envs/ambiente.yml"
     shell:
         """
-        {input.r_script}
+        Rscript {input.r_script}
         """
 
 rule index_html:

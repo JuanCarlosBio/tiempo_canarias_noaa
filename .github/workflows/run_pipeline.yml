@@ -1,6 +1,9 @@
 name: Ejecutar las precipitaciones en Canarias (NOAA)
 run-name: ${{ github.actor }} Está ejecutando Snakemake workflow 🚀
-on: [push]
+on: 
+  # [push]
+  schedule:
+    - cron: '0 0 * * *'
 jobs:
   Correr-las-precipitaciones-en-Canarias-NOAA:
     runs-on: ubuntu-latest

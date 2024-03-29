@@ -7,13 +7,13 @@ channels:
   - bioconda
 
 dependencies:
-  - r-base
-  - r-tidyverse
-  - r-glue
-  - r-archive
-  - r-sf
-  - r-markdown
-  - parallel
-  - snakemake
-  - graphviz
-  - coreutils
+  - r-base=4.3.3
+  - r-tidyverse=2.0.0
+  - r-glue=1.7.0
+  - r-archive=1.1.7
+  - r-sf=1.0_16
+  - r-markdown=1.12
+  - parallel=20240122
+  - snakemake=8.10.0
+  - graphviz=9.0.0
+  - coreutils=9.4

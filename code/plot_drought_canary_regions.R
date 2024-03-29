@@ -26,7 +26,8 @@ lat_lon_prcp %>%
         n = n(),
     ) %>%
     ungroup() %>%
-    filter(n >= 30 & year == 2022) %>%
+    filter(n >= 30 & year == year(today())
+) %>%
     select(-n, -mean_prcp, -year) %>%
     mutate(z_score = if_else(z_score > 1, 1, z_score),
            z_score = if_else(z_score < -1, -1, z_score)) %>%

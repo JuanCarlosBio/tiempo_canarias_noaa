@@ -17,6 +17,8 @@ rule get_all_archives:
         "data/ghcnd_all.tar.gz"
     params:
         "ghcnd_all.tar.gz"
+    conda:
+        "code/envs/ambiente.yml"
     shell:
         """
         {input.script} {params}
@@ -28,6 +30,8 @@ rule get_all_file_names:
         archives = "data/ghcnd_all.tar.gz"
     output:
         "data/ghcnd_all_files.txt"
+    conda:
+        "code/envs/ambiente.yml"
     shell:
         """
         {input.script}
@@ -40,6 +44,8 @@ rule get_inventory:
         "data/ghcnd-inventory.txt"
     params:
         "ghcnd-inventory.txt"
+    conda:
+        "code/envs/ambiente.yml"
     shell:
         """
         {input.script} {params}
@@ -52,6 +58,8 @@ rule get_stations:
         "data/ghcnd-stations.txt"
     params:
         "ghcnd-stations.txt"
+    conda:
+        "code/envs/ambiente.yml"
     shell:
         """
         {input.script} {params}
@@ -60,7 +68,9 @@ rule get_shp_canary_islands:
     input:
         bash_script = "code/canary_islands_idecanarias.bash",
     output:
-        "data/islands_shp/municipios.shp",
+        "data/islands_shp/municipios.shp"
+    conda:
+        "code/envs/ambiente.yml"
     shell:
         """
         {input.bash_script}
@@ -73,6 +83,8 @@ rule summirise_dly_files:
         tarball = "data/ghcnd_all.tar.gz"
     output:
         "data/ghcnd_tidy.tsv"
+    conda:
+        "code/envs/ambiente.yml"
     shell:
         """
         {input.bash_script}
@@ -84,6 +96,8 @@ rule get_canary_regions_years:
         data = "data/ghcnd-inventory.txt"
     output:
         "data/ghcnd_canary_regions_years.tsv"
+    conda:
+        "code/envs/ambiente.yml"
     shell:
         """
         {input.r_script}
@@ -97,6 +111,8 @@ rule plot_drought_canary_region:
         muni = "data/islands_shp/municipios.shp"
     output:
         "figures/precipitaciones_canarias.png"
+    conda:
+        "code/envs/ambiente.yml"
     shell:
         """
         {input.r_script}
@@ -108,6 +124,8 @@ rule index_html:
         png = "figures/precipitaciones_canarias.png"
     output:
         "index.html"
+    conda:
+        "code/envs/ambiente.yml"
     shell:
         """
         R -e "library(rmarkdown); render('{input.rmd}')"

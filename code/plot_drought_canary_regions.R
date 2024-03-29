@@ -46,7 +46,7 @@ ggplot() +
                          labels = c("<-1", "-0.5", "0", "0.5", ">1")) +
     labs(
         title = glue("Cantidad de precipitaciones en Canarias del {start} al {end}"),
-        subtitle = "Z-score estandarizado para los últimos 30 años",
+        subtitle = "Z-score estandarizado para al menos los últimos 30 años",
         caption = 'Datos de las precipitaciones obtenidos de la colección GHCDN diaria de las estaciones NOAA.\nBasado en el proyecto "Drought Index" del canal Riffomonas Project.',
         x = NULL,
         y = NULL,

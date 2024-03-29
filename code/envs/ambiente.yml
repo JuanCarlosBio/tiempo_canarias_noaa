@@ -17,3 +17,4 @@ dependencies:
   - snakemake=8.10.0
   - graphviz=9.0.0
   - coreutils=9.4
+  - unzip=6.0

@@ -2,4 +2,4 @@
 
 Estudio del tiempo de las estaciones NOAA en Canarias
 
-https://juankkar.github.io/tiempo_canarias_noaa/
+https://juancarlosbio.github.io/tiempo_canarias_noaa/

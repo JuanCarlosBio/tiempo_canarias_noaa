@@ -1,6 +1,8 @@
 data/*
 !data/README.txt
 Rplots.pdf
+png_tempdir/
+precipitacion_canarias.gif
 
 # History files
 .Rhistory

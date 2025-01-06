@@ -12,9 +12,11 @@ dependencies:
   - r-glue=1.7.0
   - r-archive=1.1.7
   - r-sf=1.0_16
-  - r-markdown=1.12
+  - r-markdown=1.12 
+  - r-rmarkdown=2.26
   - parallel=20240122
   - snakemake=8.10.0
   - graphviz=9.0.0
   - coreutils=9.4
   - unzip=6.0
+  - imagemagick=7.1.1_33
